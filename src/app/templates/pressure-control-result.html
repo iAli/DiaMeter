@@ -1,0 +1,69 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blood Pressure Control Result</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<div class="title">Blood Pressure Control Result</div>
+		    <div class="content" style="font-size: 20px;">
+
+              {% if result==0 %}
+                <p style="font-weight: bold; text-align: center; padding-bottom: 55px;">
+                    🎉 Great, You have normal blood pressure level 🎉
+                </p>
+                <p style="padding-bottom: 5px;">
+                    🍏 Continue a healthy lifestyle
+                </p>
+                <p style="padding-bottom: 5px;">
+                    💊 Take your medicine regularly
+                </p>
+                <p style="padding-bottom: 35px;">
+                    📝 Have regular check-ups
+                </p>
+
+              {% elif result==1 %}
+                <p style="font-weight: bold; text-align: center; padding-bottom: 55px;">
+			        ⚠️ Be Aware, Your blood pressure is high ⚠️
+                </p>
+                <p style="padding-bottom: 5px;">
+                    👨‍⚕️ Consult your doctor
+                </p>
+                <p style="padding-bottom: 5px;">
+                    💊 Take your medicine regularly
+                </p>
+                <p style="padding-bottom: 5px;">
+                    🧂 Consume less salt
+                </p>
+                <p style="padding-bottom: 5px;">
+                    🍽 Eat healthy fats only
+                </p>
+                <p style="padding-bottom: 5px;">
+                    🏃‍♂️ Walk 30 minutes every day
+                </p>
+
+              {% else %}
+                <p style="font-weight: bold; text-align: center; padding-bottom: 55px;">
+                    🔴 Oops, An error accrued, please try again 🔴
+                </p>
+
+              {% endif %}
+
+			</div>
+		</div>
+	</div>
+</body>
+</html>

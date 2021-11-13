@@ -1,0 +1,66 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Diabetes Prediction</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<div class="title">Diabetes Prediction</div>
+		    <div class="content">
+		      <form action="/prediction-result" method="post">
+		        <div class="user-details">
+		          <div class="input-box">
+		            <label class="details">Age:</label>
+		            <input type="number" step="any" min="0" placeholder="'35' years old" name="age" required>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Weight:</label>
+		            <input type="number" step="any" min="0" placeholder="'65' kg" name="weight" required>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Height:</label>
+		            <input type="number" step="any" min="0" placeholder="'170' cm" name="height" required>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Blood Sugar:</label>
+		            <input type="number" step="any" min="0" placeholder="'90' mg/dL" name="sugar" required>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Blood Pressure:</label>
+		            <input class="bp1" type="number" step="any" min="0" placeholder="'110'SBP" name="pressure1" required>
+		            <input class="bp2" type="number" step="any" min="0" placeholder="'80'DBP" name="pressure2" required>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Are there diabetics in the family?</label>
+		            <label style="margin-left: 40px">
+					    <input style="position: absolute; left: 40%;" type="radio" name="family" value="0.55" required>
+					    Yes
+					</label>
+					<label style="margin-left: 75px">
+					    <input style="position: absolute; left: 52%;" type="radio" name="family" value="0.43" required>
+					    No
+					</label>
+		          </div>
+		        </div>
+		        <div>
+		          <input class="btn3" type="submit" value="Result">
+		        </div>
+		    	</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

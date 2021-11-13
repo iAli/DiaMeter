@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blood Pressure Control</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<div class="title">Blood Pressure Control</div>
+		    <div class="content">
+		      <form action="/pressure-control-result" method="post">
+		        <div class="user-details">
+		          <div class="input-box">
+		            <label class="details">Blood Pressure:</label>
+		            <input class="bp1" type="number" step="any" min="0" placeholder="'110'SBP" name="pressure1" required>
+		            <input class="bp2" type="number" step="any" min="0" placeholder="'80'DBP" name="pressure2" required>
+		          </div>
+		        </div>
+		        <div style="padding-top: 20px; padding-bottom: 155px;">
+		          <input class="btn3" type="submit" value="Result">
+		        </div>
+		    	</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

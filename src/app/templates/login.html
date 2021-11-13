@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+	<link rel="stylesheet" href="../static/css/style3.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+
+		<div class="login-box" style="margin-top: 40px;">
+			<h2>Login</h2>
+			{% if alert==1 %}
+				<p style="color: #cc0000; font-size: 15px; font-weight: bold; margin-bottom: 30px;"> The username or password you entered is incorrect. </p>
+			{% endif %}
+			<form action="/followup" method="post">
+				<div class="login-field">
+					<input type="number" min="0" name="username" required>
+					<label>Username</label>
+				</div>
+				<div class="login-field">
+					<input type="password" name="password" required>
+					<label >Password</label>
+				</div>
+				<button type="submit">Login</button>
+			</form>
+		</div>
+
+	</div>
+</body>
+</html>

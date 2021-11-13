@@ -1,0 +1,98 @@
+.wrapper{
+	background: none;
+	background-color: #dddddd;
+}
+.wrapper .center{
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	font-family: sans-serif;
+	user-select: none;
+}
+.center .title{
+	font-size: 35px;
+	width: 900px;
+	font-weight: bold;
+	text-align: center;
+	padding-bottom: 70px;
+}
+.center .details{
+	font-size: 20px;
+	width: 900px;
+	text-align: left;
+	padding-bottom: 50px;
+	padding-left: 50px;
+}
+.center .input-box{
+	font-size: 20px;
+	width: 900px;
+	text-align: left;
+	padding-bottom: 20px;
+}
+.center input{
+	font-size: 18px;
+	position: absolute;
+	left: 40%;
+	width: 200px;
+	height: 25px;
+	text-align: center;
+	align-content: center;
+}
+.center .bp1{
+	position: absolute;
+	left: 40%;
+	width: 90px;
+	height: 25px;
+	text-align: center;
+	align-content: center;
+}
+.center .bp2{
+	position: absolute;
+	left: 52%;
+	width: 90px;
+	height: 25px;
+	text-align: center;
+	align-content: center;
+}
+.btn3{
+	border: none;
+	height: 44px !important;
+	width: 150px;
+	font-size: 20px !important;
+	font-weight: 600;
+	color: white;
+	background: #222831;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #cc0000;
+	border-radius: 25px;
+	transition: .4s;
+}
+.btn3:hover{
+	background: #cc0000;
+}
+.buttons2 button{
+
+	height: 57px;
+	width: 180px;
+	font-size: 20px;
+	font-weight: 600;
+	color: white;
+	background: #222831;
+	outline: none;
+	cursor: pointer;
+	border: 1px solid #cc0000;
+	border-radius: 25px;
+	transition: .4s;
+	margin-bottom: 35px;
+}
+.buttons2 .btn21{
+	margin-right: 20px;
+}
+.buttons2 .btn22{
+	margin-left: 20px;
+}
+.buttons2 button:hover{
+	background: #cc0000;
+}

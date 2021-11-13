@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blood Sugar Control</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<div class="title">Blood Sugar Control</div>
+		    <div class="content">
+			  <p style="padding-bottom: 25px;">
+					To have accurate result you must measure your blood sugar at one of these times:<br/>
+					1- After <b>2 hours</b> from the last meal (<b>PP</b> Test)<br/>
+					2- After <b>8 hours</b> or more from the last meal (<b>F</b> Test)<br/>
+			  </p>
+		      <form action="/sugar-control-result" method="post">
+		        <div class="user-details">
+			      <div class="input-box">
+		            <label class="details">Test Type:</label>
+		            <label style="margin-left: 240px">
+					    <input style="position: absolute; left: 40%;" type="radio" name="time" value="PP" required>
+					    PP
+					</label>
+					<label style="margin-left: 75px">
+					    <input style="position: absolute; left: 52%;" type="radio" name="time" value="F" required>
+					    F
+					</label>
+		          </div>
+		          <div class="input-box">
+		            <label class="details">Blood Sugar:</label>
+		            <input type="number" step="any" min="0" placeholder="'90' mg/dL" name="sugar" required>
+		          </div>
+		        </div>
+		        <div style="padding-top: 20px; padding-bottom: 60px;">
+		          <input class="btn3" type="submit" value="Result">
+		        </div>
+		    	</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

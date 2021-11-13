@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Weight Control</title>
+	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/style2.css">
+</head>
+<body>
+	<div class="wrapper">
+		<nav class="navbar">
+			<a href="/">
+				<img class="logo" src="../static/img/su-diameter-logo.png">
+			</a>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/about">About</a></li>
+				<li><a href="https://github.com/iAli/DiaMeter/issues">Contact</a></li>
+			</ul>
+		</nav>
+		<div class="center">
+			<div class="title">Weight Control</div>
+		    <div class="content">
+		      <form action="/weight-control-result" method="post">
+		        <div class="user-details">
+		          <div class="input-box">
+		            <label class="details">Weight:</label>
+		            <input type="number" step="any" min="0" placeholder="'65' kg" name="weight" required>
+		          </div>
+		        </div>
+		        <div style="padding-top: 20px; padding-bottom: 155px;">
+		          <input class="btn3" type="submit" value="Result">
+		        </div>
+		    	</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

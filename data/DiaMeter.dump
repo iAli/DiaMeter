@@ -1,0 +1,146 @@
+-- MySQL dump 10.13  Distrib 5.7.23, for macos10.13 (x86_64)
+--
+-- Host: 127.0.0.1    Database: DiaMeter
+-- ------------------------------------------------------
+-- Server version	5.7.16
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+
+--
+-- Table structure for table `clinic`
+--
+
+DROP TABLE IF EXISTS `clinic`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `clinic` (
+  `c_id` int(6) NOT NULL AUTO_INCREMENT,
+  `c_name` varchar(50) DEFAULT NULL,
+  `c_notes` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=104 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `clinic`
+--
+
+LOCK TABLES `clinic` WRITE;
+/*!40000 ALTER TABLE `clinic` DISABLE KEYS */;
+INSERT INTO `clinic` VALUES (101,'SU Medical Center','Shaqra University Hospital'),(102,'Saudi Diabetes Hospital','Diabetes Specialist Hospital in Riyadh'),(103,'Ali Clinic','Virtual Clinic');
+/*!40000 ALTER TABLE `clinic` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `doctor`
+--
+
+DROP TABLE IF EXISTS `doctor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `doctor` (
+  `d_id` int(6) NOT NULL AUTO_INCREMENT,
+  `d_name` varchar(50) DEFAULT NULL,
+  `d_specialization` varchar(50) DEFAULT NULL,
+  `d_password` varchar(50) DEFAULT NULL,
+  `c_id` int(6) DEFAULT NULL,
+  PRIMARY KEY (`d_id`),
+  KEY `FK_cd` (`c_id`),
+  CONSTRAINT `FK_cd` FOREIGN KEY (`c_id`) REFERENCES `clinic` (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1010 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `doctor`
+--
+
+LOCK TABLES `doctor` WRITE;
+/*!40000 ALTER TABLE `doctor` DISABLE KEYS */;
+INSERT INTO `doctor` VALUES (1001,'Mohammed Alabadi','Family Medicine','p1001',101),(1002,'Fares Almansour','General Practitioner','p1002',101),(1003,'Abdulrahman Alotaibi','General Practitioner','p1003',101),(1004,'Badr Alharbi','Family Medicine','p1004',102),(1005,'Fayez Alharthi','Family Medicine','p1005',102),(1006,'Moayad Alahmadi','General Practitioner','p1006',102),(1007,'Khaled Alamri','Internal Medicine','p1007',102),(1008,'Ali Abdeltawab','General Practitioner','p1008',103),(1009,'Abdulaziz Alsaif','Family Medicine','p1009',103);
+/*!40000 ALTER TABLE `doctor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `patient`
+--
+
+DROP TABLE IF EXISTS `patient`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `patient` (
+  `p_id` int(6) NOT NULL AUTO_INCREMENT,
+  `p_name` varchar(50) DEFAULT NULL,
+  `p_age` int(3) DEFAULT NULL,
+  `p_gender` varchar(10) DEFAULT NULL,
+  `p_height` int(3) DEFAULT NULL,
+  `p_password` varchar(50) DEFAULT NULL,
+  `c_id` int(6) DEFAULT NULL,
+  PRIMARY KEY (`p_id`),
+  KEY `FK_cp` (`c_id`),
+  CONSTRAINT `FK_cp` FOREIGN KEY (`c_id`) REFERENCES `clinic` (`c_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5031 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `patient`
+--
+
+LOCK TABLES `patient` WRITE;
+/*!40000 ALTER TABLE `patient` DISABLE KEYS */;
+INSERT INTO `patient` VALUES (5001,'Yahya Alabdli',33,'M',161,'p5001',101),(5002,'Mohannad Alghamdi',36,'M',151,'p5002',101),(5003,'Abdullah Almutairi',44,'M',174,'p5003',101),(5004,'Yazeed Alawaji',50,'M',170,'p5004',101),(5005,'Yazeed Alammar',52,'M',175,'p5005',101),(5006,'Faisal Alanazi',38,'M',155,'p5006',101),(5007,'Fahad Alharthi',44,'M',178,'p5007',101),(5008,'Yousef Alyami',62,'M',168,'p5008',101),(5009,'Khaled Alhazmi',43,'M',171,'p5009',101),(5010,'Ibrahim Alahmari',62,'M',168,'p5010',101),(5011,'Abdullah Alqarni',34,'M',164,'p5011',102),(5012,'Saad Alturki',68,'M',169,'p5012',102),(5013,'Nawaf Alamri',67,'M',166,'p5013',102),(5014,'Faisal Alghamdi',50,'M',176,'p5014',102),(5015,'Abdulaziz Alharbi',59,'M',179,'p5015',102),(5016,'Abdulwhab Alshirari',45,'M',166,'p5016',102),(5017,'Mohammad Alattas',59,'M',165,'p5017',102),(5018,'Abdulhakeem Alyousef',41,'M',168,'p5018',102),(5019,'Omar Alsultan',62,'M',168,'p5019',102),(5020,'Sultan Alrashidi',57,'M',177,'p5020',102),(5021,'Majed Alqurashi',52,'M',173,'p5021',103),(5022,'Omar Alfozan',52,'M',171,'p5022',103),(5023,'Sulaiman Alshehri',32,'M',173,'p5023',103),(5024,'Sulaiman Alshahrani',30,'M',179,'p5024',103),(5025,'Mohammed Alotaibi',60,'M',169,'p5025',103),(5026,'Turki Alanazi',66,'M',172,'p5026',103),(5027,'Nawaf Aldahash',38,'M',154,'p5027',103),(5028,'Hussam Alzahrani',45,'M',175,'p5028',103),(5029,'Saleh Alotaibi',39,'M',159,'p5029',103),(5030,'Ahmed Alharbi',54,'M',175,'p5030',103);
+/*!40000 ALTER TABLE `patient` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `test`
+--
+
+DROP TABLE IF EXISTS `test`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `test` (
+  `t_id` int(6) NOT NULL AUTO_INCREMENT,
+  `t_name` varchar(50) DEFAULT NULL,
+  `t_date` datetime DEFAULT CURRENT_TIMESTAMP,
+  `t_result` varchar(10) DEFAULT NULL,
+  `t_notes` varchar(50) DEFAULT NULL,
+  `p_id` int(6) DEFAULT NULL,
+  PRIMARY KEY (`t_id`),
+  KEY `FK_pt` (`p_id`),
+  CONSTRAINT `FK_pt` FOREIGN KEY (`p_id`) REFERENCES `patient` (`p_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `test`
+--
+
+LOCK TABLES `test` WRITE;
+/*!40000 ALTER TABLE `test` DISABLE KEYS */;
+INSERT INTO `test` VALUES (1,'WT','2020-10-05 08:20:11','79','BMI= 30.5',5001),(2,'WT','2020-10-05 08:28:53','112','BMI= 49.1',5002),(3,'WT','2020-10-05 08:44:21','118','BMI= 39.0',5003),(4,'BP','2020-10-08 14:18:07','120/80',NULL,5001),(5,'BP','2020-10-10 11:43:29','150/100',NULL,5002),(6,'BP','2020-10-10 20:17:03','135/92',NULL,5003),(7,'BG','2020-10-15 11:07:24','88','F',5001),(8,'BG','2020-10-15 16:31:38','190','PP',5002),(9,'BG','2020-10-16 08:56:48','150','F',5003),(10,'BG','2020-10-28 11:20:23','100','F',5007),(11,'BG','2020-11-02 08:36:15','120.0','PP',5010),(12,'BP','2020-11-02 08:53:44','118/80',NULL,5010),(14,'WT','2020-11-19 18:34:54','80.0','BMI= 28.3',5014),(15,'WT','2020-12-12 18:16:52','90.0','BMI= 31.5',5012),(16,'WT','2021-01-06 02:16:29','63.0','BMI= 22.1',5008),(17,'WT','2021-01-09 12:48:45','72.0','BMI= 25.2',5017),(18,'WT','2021-02-27 09:38:59','96.0','BMI= 33.6',5020),(19,'BP','2021-03-20 06:49:28','128/67',NULL,5006),(20,'BP','2021-03-29 22:55:42','145/102',NULL,5011),(21,'BP','2021-04-02 02:29:17','113/77',NULL,5004),(22,'BG','2021-04-02 12:50:45','148.0','PP',5004),(23,'BG','2021-04-03 15:25:56','127.0','F',5012),(24,'BG','2021-04-03 21:37:11','98.0','F',5007),(25,'BP','2021-04-05 08:22:54','117/83',NULL,5002),(26,'WT','2021-04-05 02:53:05','76.0','BMI= 26.6',5002),(27,'BG','2021-04-06 04:26:14','174.0','PP',5016),(28,'BG','2021-04-06 08:42:54','198.0','PP',5010),(29,'BG','2021-04-06 11:54:26','60.0','F',5003),(30,'BP','2021-04-06 12:35:21','105/68',NULL,5001),(31,'BG','2021-04-06 13:29:16','65.0','PP',5010),(32,'BG','2021-04-07 16:29:27','65.0','PP',5005),(33,'WT','2021-04-07 16:30:07','80.0','BMI= 26.1',5005);
+/*!40000 ALTER TABLE `test` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Dumping routines for database 'DiaMeter'
+--
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2021-04-13 19:41:49
